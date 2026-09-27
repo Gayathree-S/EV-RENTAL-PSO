@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* Force light theme — dark-mode OS preference is intentionally ignored
+   to keep form inputs legible (text always visible on white backgrounds). */
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+}
+
+/* Ensure input text is always dark/legible regardless of OS colour scheme */
+input, textarea, select {
+  color: #0f172a;
+  background-color: #ffffff;
+}
